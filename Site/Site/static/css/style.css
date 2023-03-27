@@ -8,6 +8,7 @@
 body{
     background-image: url('../img/bg_m.png');
     background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: 1920px 1000px
 }
 
@@ -59,14 +60,6 @@ a{
     width: 100%;
     height: 100%;
 }
-    .obj{
-        position: absolute;
-        width: 276px;
-        height: 362px;
-        margin-left: 20%;
-        background: #FFE6AA;
-        border-radius:  83px;
-    }
 
 
 
@@ -137,7 +130,6 @@ a{
 
 
 .adres{
-    display: inline-block;
     margin-top: 2%;
     margin-left: 43%;
     border-radius: 13px;
@@ -166,3 +158,39 @@ a{
             margin-left: 5%;
             margin-top: 2%;
     }
+.product_list{
+    margin-top: 3%;
+    margin-left: 5%;
+    margin-right: 2%;
+    display: inline-block;
+
+}
+.product{
+
+        margin-left: 40% ;
+        width: 276px;
+        height: 362px;
+        background: #FFE6AA;
+        border-radius:  83px;
+    }
+
+
+.product_image{
+    margin-bottom: 5%;
+    margin-left: 15%;
+    height: 200px;
+    width: 210px;
+}
+    .product_name{
+        display: block;
+        margin-top: 0;
+        font-family: 'Alata', sans-serif;
+        text-align: center;
+        font-size: 25px;
+    }
+        .product_price{
+            font-family: 'Alata', sans-serif;
+            text-align: right;
+            margin-right: 15%;
+            margin-top: 25%;
+        }

@@ -13,12 +13,16 @@
         </ul>
     </div>
 
-    <div class="obj">
-            <h2>Latte</h2>
-            <h2>Latte</h2>
-    </div>
-</div>
 
+    {% for p in product_list %}
+        <div class="product_list">
+            <div class="product">
+                <img class="product_image"  src="{{ p.image.url}}">
+                <p class="product_name">{{ p.name}}</p>
+                <p class="product_price">{{p.price}}р.</p>
+            </div>
+        </div>
+    {% endfor %}
 
 
 {% endblock %}
