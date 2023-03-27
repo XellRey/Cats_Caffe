@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="nav">
+        <a href="{% url 'index' %}"><img src="/static/img/logo.png" class="logo"></a>
+        <ul class="navig">
+            <li><a href="{% url 'menu'%}">Menu</a></li>
+            <li><a>About us</a></li>
+            <li><a href="{% url 'contacts'%}">Contacts</a></li>
+            <img class='search' src="/static/img/Profile.png">
+            <img class='bag' src="/static/img/Bag.png">
+        </ul>
+    </div>
+
+<div class="contacts">
+
+    <div id="map" class="map">
+        <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript">
+        </script>
+        <script src="/static/js/script.js"></script>
+    </div>
+
+    <div class="info">
+        <div class="text">
+            <h2>Контакты:</h2>
+            <p>Телефон: +79251153588</p>
+            <p>Ежедневно с 9:00 до 22:00</p>
+            <p>Электронная почта: cats_cafe@gmail.com</p>
+        </div>
+
+    </div>
+
+    <div class="adres">
+        <div class="text_adr">
+            <h2>Адресс:</h2>
+            <p>Улица: Совхозная улица, 39</p>
+            <p>Метро: Люблино</p>
+        </div>
+    </div>
+
+    <div class="graphic">
+        <div class="text_gr">
+            <h2>График Работы</h2>
+            <p>Пн - Пт | с 8:30 до 22:30</p>
+            <p>Сб - Вс | с 9:30 до 23:00</p>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="nav">
+        <a href="{% url 'index' %}"><img src="/static/img/logo.png" class="logo"></a>
+        <ul class="navig">
+            <li><a href="{% url 'menu'%}">Menu</a></li>
+            <li><a>About us</a></li>
+            <li><a href="{% url 'contacts'%}">Contacts</a></li>
+            <img class='search' src="static/img/Profile.png">
+            <img class='bag' src="static/img/Bag.png">
+        </ul>
+    </div>
+    <div class="main">
+        <h1 class="name">Cats Cafe</h1>
+        <div class="btn">
+            <h2 class="txt_b"><a href="{% url 'menu'%}">Make an order</a></h2>
+        </div>
+    </div>
+
+
+{% endblock %}
