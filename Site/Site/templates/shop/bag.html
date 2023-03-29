@@ -1,6 +1,28 @@
-{% extends 'basic.html' %}
+{% extends 'base.html' %}
 
 {% block content %}
+   <div class="nav">
+        <a href="{% url 'index' %}"><img src="/static/img/logo.png" class="logo"></a>
+        <ul class="navig">
+            <li><a href="{% url 'menu'%}">Menu</a></li>
+            <li><a>About us</a></li>
+            <li><a href="{% url 'contacts'%}">Contacts</a></li>
+            <img class='search' src="/static/img/Profile.png">
+            <a href="{% url 'bag' %}"><img class='bag' src="/static/img/Bag.png"></a>
+        </ul>
+    </div>
+
+    <div class="bag_cont">
+
+        <div class="price">
+            <div class="hide">
+            </div>
+            <p class="text_pr">2 Товара</p>
+            <h4 class="text_pr">Доставка</h4>
+            <p class="text_pr">Бесплатно</p>
+            <h3 class="text_pr">Сумма заказа:</h3>
+        </div>
+    </div>
 
 
 

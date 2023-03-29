@@ -1,14 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="nav">
+
+<div class="bg">
+      <div class="nav">
         <a href="{% url 'index' %}"><img src="/static/img/logo.png" class="logo"></a>
         <ul class="navig">
             <li><a href="{% url 'menu'%}">Menu</a></li>
-            <li><a>About us</a></li>
+
             <li><a href="{% url 'contacts'%}">Contacts</a></li>
-            <img class='search' src="static/img/Profile.png">
-            <img class='bag' src="static/img/Bag.png">
+            <a href="{% url 'login' %}"><img class='search' src="static/img/Profile.png"></a>
+            <a href="{% url 'bag' %}"><img class='bag' src="/static/img/Bag.png"></a>
         </ul>
     </div>
     <div class="main">
@@ -17,6 +19,5 @@
             <h2 class="txt_b"><a href="{% url 'menu'%}">Make an order</a></h2>
         </div>
     </div>
-
-
+</div>
 {% endblock %}

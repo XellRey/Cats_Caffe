@@ -4,7 +4,14 @@
     padding: 0;
 }
 
-
+.bg{
+    width: 1920px;
+    height: 960px;
+    background-image: url('../img/bg.png');
+    background-size: 1920px 1000px;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
 body{
     background-image: url('../img/bg_m.png');
     background-repeat: no-repeat;
@@ -44,27 +51,21 @@ a{
             .search{
                 position: absolute;
                 left: 1800px;
-                top: 8px;
+                top: 6px;
                 width: 40px;
                 height:40px;
             }
                 .bag{
                 position: absolute;
                 left: 1850px;
-                top: 8px;
+                top: 6px;
                 width: 40px;
                 height:40px;
             }
-.menu{
-
-    width: 100%;
-    height: 100%;
-}
 
 
 
-
-/* Главаня Страница */
+    /* Главаня Страница */
 .name{
     font-family: 'Alata', sans-serif;
     font-size: 90px;
@@ -90,7 +91,8 @@ a{
         }
 
 
-/* Контакты */
+
+    /* Контакты */
 .contacts{
     box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 45px;
@@ -130,8 +132,9 @@ a{
 
 
 .adres{
-    margin-top: 2%;
-    margin-left: 43%;
+    position: fixed;
+    margin-top: 1.1%;
+    margin-left: 30%;
     border-radius: 13px;
     width: 500px;
     height: 130px;
@@ -145,19 +148,22 @@ a{
 
 
 .graphic{
-    position: absolute;
-    top: 70%;
-    margin-left: 57%;
+    margin-top: 1.3%;
+    margin-left: 55%;
+    position: fixed;
     border-radius: 13px;
     width: 300px;
     height: 130px;
 
 }
     .text_gr{
-          font-family: 'Alata', sans-serif;
+            font-family: 'Alata', sans-serif;
             margin-left: 5%;
             margin-top: 2%;
     }
+
+
+    /* Menu */
 .product_list{
     margin-top: 3%;
     margin-left: 5%;
@@ -166,7 +172,6 @@ a{
 
 }
 .product{
-
         margin-left: 40% ;
         width: 276px;
         height: 362px;
@@ -174,23 +179,52 @@ a{
         border-radius:  83px;
     }
 
-
-.product_image{
-    margin-bottom: 5%;
-    margin-left: 15%;
-    height: 200px;
-    width: 210px;
-}
-    .product_name{
-        display: block;
-        margin-top: 0;
-        font-family: 'Alata', sans-serif;
-        text-align: center;
-        font-size: 25px;
+    .product_image{
+        margin-bottom: 5%;
+        margin-left: 15%;
+        height: 200px;
+        width: 210px;
     }
-        .product_price{
+        .product_name{
+            display: block;
+            margin-top: 0;
             font-family: 'Alata', sans-serif;
-            text-align: right;
-            margin-right: 15%;
-            margin-top: 25%;
+            text-align: center;
+            font-size: 25px;
+        }
+            .product_price{
+                font-family: 'Alata', sans-serif;
+                text-align: right;
+                margin-right: 15%;
+                margin-top: 25%;
+            }
+
+
+
+    /* Bag */
+
+.bag_cont{
+    box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 45px;
+    margin-top: 4%;
+    background: #ffffff;
+    width: 1400px;
+    height: 800px;
+    margin-left: 15%;
+}
+    .price{
+        font-family: 'Alata', sans-serif;
+        font-size: 23px;
+        border-radius: 45px;
+        float: right;
+        background: #FFC559;
+        width: 350px;
+        height: 800px;
+    }
+        .hide{
+            height: 60%;
+        }
+        .text_pr{
+            margin-top: 10%;
+            margin-left: 8%;
         }

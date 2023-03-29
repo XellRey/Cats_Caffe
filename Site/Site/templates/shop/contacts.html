@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
   <div class="nav">
         <a href="{% url 'index' %}"><img src="/static/img/logo.png" class="logo"></a>
         <ul class="navig">
@@ -8,7 +9,7 @@
             <li><a>About us</a></li>
             <li><a href="{% url 'contacts'%}">Contacts</a></li>
             <img class='search' src="/static/img/Profile.png">
-            <img class='bag' src="/static/img/Bag.png">
+            <a href="{% url 'bag' %}"><img class='bag' src="/static/img/Bag.png"></a>
         </ul>
     </div>
 
@@ -23,7 +24,7 @@
     <div class="info">
         <div class="text">
             <h2>Контакты:</h2>
-            <p>Телефон: +79251153588</p>
+            <p>Телефон: +79351153288</p>
             <p>Ежедневно с 9:00 до 22:00</p>
             <p>Электронная почта: cats_cafe@gmail.com</p>
         </div>
@@ -47,5 +48,4 @@
     </div>
 
 </div>
-
 {% endblock %}

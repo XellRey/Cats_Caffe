@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="menu">
-    <div class="nav">
+
+<div class="nav" xmlns="http://www.w3.org/1999/html">
         <a href="{% url 'index' %}"><img src="/static/img/logo.png" class="logo"></a>
         <ul class="navig">
             <li><a href="{% url 'menu'%}">Menu</a></li>
             <li><a>About us</a></li>
             <li><a href="{% url 'contacts'%}">Contacts</a></li>
             <img class='search' src="/static/img/Profile.png">
-            <img class='bag' src="/static/img/Bag.png">
+            <a href="{% url 'bag' %}"><img class='bag' src="/static/img/Bag.png"></a>
         </ul>
     </div>
 
@@ -17,8 +17,8 @@
     {% for p in product_list %}
         <div class="product_list">
             <div class="product">
-                <img class="product_image"  src="{{ p.image.url}}">
-                <p class="product_name">{{ p.name}}</p>
+                <img class="product_image"  src="{{p.image.url}}">
+                <p class="product_name">{{p.name}}</p>
                 <p class="product_price">{{p.price}}р.</p>
             </div>
         </div>

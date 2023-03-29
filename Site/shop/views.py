@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Product_item
 # Create your views here.
 
@@ -17,3 +17,9 @@ def menu(request):
 
 def contacts(request):
     return render(request, 'shop/contacts.html')
+
+
+def bag(requset):
+    return render(requset, 'shop/bag.html')
+
+
