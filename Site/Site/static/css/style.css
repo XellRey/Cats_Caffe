@@ -11,6 +11,7 @@
     background-size: 1920px 1000px;
     background-attachment: fixed;
     background-repeat: no-repeat;
+    background-position: center;
 }
 body{
     background-image: url('../img/bg_m.png');
@@ -228,3 +229,181 @@ a{
             margin-top: 10%;
             margin-left: 8%;
         }
+.reg_btn_login{
+
+    font-family: 'Alata', sans-serif;
+    margin-left: 70%;
+    font-size: 25px;
+    margin-top: 40%;
+
+}
+.back{
+
+    font-family: 'Alata', sans-serif;
+    display: inline-block;
+    margin-top: 49%;
+    margin-left: 4%;
+    font-size: 25px;
+}
+.login_block{
+    box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 45px;
+    margin-top: 9%;
+    background: #ffffff;
+    width: 900px;
+    height: 500px;
+    margin-left: 27%;
+}
+    .login_block h1{
+        font-family: 'Alata', sans-serif;
+        margin-left: 18%;
+        margin-top: 6%;
+        position: absolute;
+    }
+
+        .login_form{
+
+            position: absolute;
+            top: 40%;
+            left: 42%;
+            border: none;
+        }
+
+
+        .login_form input{
+            font-size: 16px;
+            width: 300px;
+            border: none;
+            border-bottom: 1px solid black;
+            outline: none;
+            margin-bottom: 30px;
+        }
+        .login_btn{
+            font-family: 'Alata', sans-serif;
+            font-size: 20px;
+            background: none;
+            border-radius: 10px;
+            margin-left: 40%;
+            width: 70px;
+            height: 40px;
+            border: none;
+            transition: 1.5s;
+        }
+        button:hover {
+            color: #000000;
+            background: #f4cc03;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 3px #f49403,
+
+                0 0 20px #f4c403,
+                0 0 40px #f4a803;
+            transition: 1.5s;
+    }
+
+       .login_form login_btn{
+           width: 30px;
+       }
+        .lb{
+            position: absolute;
+            top: 38%;
+            left: 42%;
+        }
+        .login_form label{
+            position: absolute;
+            top:20px;
+            left: 0;
+            padding: 10px 0;
+            font-size: 16px;
+            color: black;
+            pointer-events: none;
+            transition: .5s;
+            margin-bottom: 30px;
+        }
+
+
+
+.profile_block{
+    box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 45px;
+    margin-top: 4%;
+    background: #ffffff;
+    width: 1400px;
+    height: 800px;
+    margin-left: 15%;
+}
+
+
+
+
+.reg_block{
+    position: fixed;
+    box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 45px;
+    margin-top: 9%;
+    background: #ffffff;
+    width: 900px;
+    height: 500px;
+    margin-left: 27%;
+}
+    .reg_block h1{
+        position: fixed;
+        font-family: 'Alata', sans-serif;
+        margin-left: 35%;
+        margin-top: 6%;
+        position: absolute;
+    }
+        .reg_form{
+            position: fixed;
+            position: absolute;
+            top: 30%;
+            left: 34%;
+            border: none;
+        }
+            .reg_form input{
+                font-size: 16px;
+                width: 300px;
+                border: none;
+                border-bottom: 1px solid black;
+                outline: none;
+                margin-bottom: 30px;
+            }
+                .reg_form span{
+                    display: none;
+
+                }
+                    .reg_lb_cont{
+                        font-family: 'Alata', sans-serif;
+                        position: fixed;
+                        margin-left: 8%;
+                        margin-top: 8%;
+                    }
+                        .reg_lb{
+
+
+                            display: flex;
+                            margin-bottom: 21%;
+                        }
+                            .reg_form label{
+                                display: none;
+                            }
+                                .reg_btn{
+                                    font-family: 'Alata', sans-serif;
+                                    font-size: 25px;
+                                    background: none;
+                                    border-radius: 10px;
+                                    margin-left: 156%;
+                                    width: 100px;
+                                    height: 50px;
+                                    border: none;
+                                    transition: 1.5s;
+                                    margin-top: 12%;
+                                }
+                                    .reg_form li{
+                                        padding: 0;
+                                        text-align: center;
+                                        display: flex;
+                                        margin-left: 20%;
+                                        font-size: 11px;
+                                        font-family: 'Alata', sans-serif;
+                                    }

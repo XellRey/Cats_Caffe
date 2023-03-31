@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="reg_block">
+     <h1>Create an account</h1>
+        <form class="reg_form" action="." method="post">
+            {{ user_form.as_p }}
+            {% csrf_token %}
+            <button class="reg_btn" id="submit" name="submit" type="submit" value="Register" />Register</button>
+        </form>
+
+    <div class="reg_lb_cont">
+        <label class="reg_lb">Username:</label>
+        <label class="reg_lb">First Name:</label>
+        <label class="reg_lb">Email:</label>
+        <label class="reg_lb">Password:</label>
+        <label class="reg_lb">Repeat Password:</label>
+    </div>
+<a class="back" type="submit" href="/account/login">Back</a>
+
+</div>
+
+
+{% endblock %}

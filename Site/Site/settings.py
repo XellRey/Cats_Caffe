@@ -139,6 +139,6 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
 
 
-LOGIN_REDIRECT_URL = ('dashboard')
-LOGIN_URL = ('login')
+LOGIN_REDIRECT_URL = ('profile')
+LOGIN_URL = ('account/login')
 

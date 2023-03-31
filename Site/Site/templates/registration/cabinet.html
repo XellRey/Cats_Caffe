@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+     <div class="nav">
+        <a href="{% url 'index' %}"><img src="/static/img/logo.png" class="logo"></a>
+        <ul class="navig">
+            <li><a href="{% url 'menu'%}">Menu</a></li>
+            <li><a>About us</a></li>
+            <li><a href="{% url 'contacts'%}">Contacts</a></li>
+            {% if user.is_authenticated %}
+                <a href="{% url 'profile' %}"><img class='search' src="/static/img/Profile.png"></a>
+            {% endif %}
+            <a href="{% url 'bag' %}"><img class='bag' src="/static/img/Bag.png"></a>
+        </ul>
+    </div>
+
+    <div class="profile_block">
+        <h3>{{request.user.username}}</h3>
+    </div>
+
+{% endblock  %}

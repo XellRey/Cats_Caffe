@@ -7,13 +7,16 @@
             <li><a href="{% url 'menu'%}">Menu</a></li>
             <li><a>About us</a></li>
             <li><a href="{% url 'contacts'%}">Contacts</a></li>
-            <img class='search' src="/static/img/Profile.png">
+            {% if user.is_authenticated %}
+                <a href="{% url 'profile' %}"><img class='search' src="/static/img/Profile.png"></a>
+            {% else %}
+                <a href="{% url 'login' %}"><img class='search' src="/static/img/Profile.png"></a>
+            {% endif %}
             <a href="{% url 'bag' %}"><img class='bag' src="/static/img/Bag.png"></a>
         </ul>
     </div>
 
     <div class="bag_cont">
-
         <div class="price">
             <div class="hide">
             </div>
