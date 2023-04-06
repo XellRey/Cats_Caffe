@@ -1,37 +1,21 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-<div class="nav" xmlns="http://www.w3.org/1999/html">
+ <div class="nav">
         <a href="{% url 'index' %}"><img src="/static/img/logo.png" class="logo"></a>
         <ul class="navig">
             <li><a href="{% url 'menu'%}">Menu</a></li>
             <li><a href="{% url 'about_us' %}">About us</a></li>
             <li><a href="{% url 'contacts'%}">Contacts</a></li>
+
             {% if user.is_authenticated %}
                 <a href="{% url 'profile' %}"><img class='search' src="/static/img/Profile.png"></a>
             {% else %}
                 <a href="{% url 'login' %}"><img class='search' src="/static/img/Profile.png"></a>
             {% endif %}
+
             <a href="{% url 'cart:cart_detail' %}"><img class='bag' src="/static/img/Bag.png"></a>
         </ul>
-    </div>
-
-
-    {% for p in product_list %}
-        <div class="product_list">
-            <div class="product">
-                <img class="product_image"  src="{{p.image.url}}">
-                <p class="product_name">{{p.name}}</p>
-                <p class="product_price">{{p.price}}р.</p>
-                <form action="{% url 'cart:cart_add' p.id %}}" method="post">
-                    {% csrf_token %}
-                    {{ CartAddProductForm }}
-                    <input type="submit" value="Добавить">
-                </form>
-            </div>
-        </div>
-    {% endfor %}
-
+ </div>
 
 {% endblock %}

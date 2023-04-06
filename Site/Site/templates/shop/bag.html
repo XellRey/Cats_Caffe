@@ -5,18 +5,69 @@
         <a href="{% url 'index' %}"><img src="/static/img/logo.png" class="logo"></a>
         <ul class="navig">
             <li><a href="{% url 'menu'%}">Menu</a></li>
-            <li><a>About us</a></li>
+            <li><a href="{% url 'about_us' %}">About us</a></li>
             <li><a href="{% url 'contacts'%}">Contacts</a></li>
             {% if user.is_authenticated %}
                 <a href="{% url 'profile' %}"><img class='search' src="/static/img/Profile.png"></a>
             {% else %}
                 <a href="{% url 'login' %}"><img class='search' src="/static/img/Profile.png"></a>
             {% endif %}
-            <a href="{% url 'bag' %}"><img class='bag' src="/static/img/Bag.png"></a>
+            <a href="{% url 'cart:cart_detail' %}"><img class='bag' src="/static/img/Bag.png"></a>
         </ul>
     </div>
 
     <div class="bag_cont">
+        <h1>Корзина покупок</h1>
+  <table class="cart">
+    <thead>
+      <tr>
+        <th>Картинка</th>
+        <th>Товар</th>
+        <th>Обновить кол-во</th>
+        <th>Удалить</th>
+        <th>Кол-во</th>
+        <th>Цена за шт</th>
+        <th>Общая стоимость</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for p in cart %}
+        {% with product=Product_item %}
+          <tr>
+            <td>
+              <a href="{{ p.get_absolute_url }}">
+                  <img src="{% if p.image %}{{ p.image.url }}{% endif %}">
+              </a>
+            </td>
+            <td>{{ p.name }}</td>
+            <td>
+              <form action="{% url 'cart:cart_add' p.id %}" method="post">
+                {{ p.update_quantity_form.quantity }}
+                {{ p.update_quantity_form.update }}
+                <input type="submit" value="Обновить">
+                {% csrf_token %}
+              </form>
+            </td>
+            <td><a href="{% url 'cart:cart_remove' p.id %}">Удалить</a></td>
+            <td>
+              {{ p.quantity }}
+            </td>
+            <td class="num">${{ p.price }}</td>
+            <td class="num">${{ p.total_price }}</td>
+          </tr>
+        {% endwith %}
+      {% endfor %}
+      <tr class="total">
+        <td>Всего</td>
+        <td colspan="4"></td>
+        <td class="num">${{ cart.get_total_price }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="text-right">
+    <a href="{% url 'menu' %}" class="button light">В магазин</a>
+    <a href="#" class="button">Оформить заказ</a>
+  </p>
         <div class="price">
             <div class="hide">
             </div>

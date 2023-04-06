@@ -44,3 +44,9 @@ def register(request):
 @login_required
 def profile(request):
     return render(request, 'registration/cabinet.html', {'user': request.user.username})
+
+
+def logout(request):
+    logout(request)
+
+

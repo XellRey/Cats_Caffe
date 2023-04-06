@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'shop',
     'account',
+    'cart.apps.CartConfig',
 ]
 
 MIDDLEWARE = [
@@ -141,4 +142,7 @@ MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
 
 LOGIN_REDIRECT_URL = ('profile')
 LOGIN_URL = ('account/login')
+LOGOUT_REDIRECT_URL = '/'
 
+
+CART_SESSION_ID = 'cart'

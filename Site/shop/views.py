@@ -25,3 +25,8 @@ def bag(requset):
     return render(requset, 'shop/bag.html')
 
 
+def about_us(request):
+    return render(request, 'shop/about_us.html')
+
+
+

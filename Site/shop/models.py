@@ -5,7 +5,7 @@ from django.db import models
 
 class Product_item(models.Model):
     name = models.CharField(max_length=100)
-    price = models.IntegerField()
+    price = models.DecimalField(max_digits=10, decimal_places=2)
     image = models.ImageField(upload_to='media/')
     category = models.CharField(max_length=50)
 
