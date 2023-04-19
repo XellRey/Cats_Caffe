@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
-   <div class="nav">
+<div class="container">
+    <div class="nav">
         <a href="{% url 'index' %}"><img src="/static/img/logo.png" class="logo"></a>
         <ul class="navig">
             <li><a href="{% url 'menu'%}">Menu</a></li>
@@ -16,68 +17,47 @@
         </ul>
     </div>
 
+
     <div class="bag_cont">
         <h1>Корзина покупок</h1>
-  <table class="cart">
-    <thead>
-      <tr>
-        <th>Картинка</th>
-        <th>Товар</th>
-        <th>Обновить кол-во</th>
-        <th>Удалить</th>
-        <th>Кол-во</th>
-        <th>Цена за шт</th>
-        <th>Общая стоимость</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for p in cart %}
-        {% with product=Product_item %}
-          <tr>
-            <td>
-              <a href="{{ p.get_absolute_url }}">
-                  <img src="{% if p.image %}{{ p.image.url }}{% endif %}">
-              </a>
-            </td>
-            <td>{{ p.name }}</td>
-            <td>
-              <form action="{% url 'cart:cart_add' p.id %}" method="post">
-                {{ p.update_quantity_form.quantity }}
-                {{ p.update_quantity_form.update }}
-                <input type="submit" value="Обновить">
-                {% csrf_token %}
-              </form>
-            </td>
-            <td><a href="{% url 'cart:cart_remove' p.id %}">Удалить</a></td>
-            <td>
-              {{ p.quantity }}
-            </td>
-            <td class="num">${{ p.price }}</td>
-            <td class="num">${{ p.total_price }}</td>
-          </tr>
-        {% endwith %}
-      {% endfor %}
-      <tr class="total">
-        <td>Всего</td>
-        <td colspan="4"></td>
-        <td class="num">${{ cart.get_total_price }}</td>
-      </tr>
-    </tbody>
-  </table>
-  <p class="text-right">
-    <a href="{% url 'menu' %}" class="button light">В магазин</a>
-    <a href="#" class="button">Оформить заказ</a>
-  </p>
-        <div class="price">
-            <div class="hide">
-            </div>
-            <p class="text_pr">2 Товара</p>
-            <h4 class="text_pr">Доставка</h4>
-            <p class="text_pr">Бесплатно</p>
-            <h3 class="text_pr">Сумма заказа:</h3>
+        <div class="cart">
+              {% for item in cart %}
+                {% with product=item.product %}
+                <div class="cart_item">
+                    <tr>
+
+                        <td>
+                            <img class="cart_item_img" src="{{ product.image.url }}" alt=""></a>
+                        </td>
+                        <p class="cart_item_name">{{ product.name }}</p>
+                        <p class="cart_item_price">{{ item.price }} руб.</p>
+                        <p class="cart_item_remove"><a   href="{% url 'cart:CartRemove' product.id %}">Удалить</a></p>
+                    </tr>
+
+                </div>
+                {% endwith %}
+              {% endfor %}
         </div>
+
+
     </div>
+        <div class="cart_price">
+            <tr class="total">
+                {% for item in cart %}
+                    {% with product=item.product %}
+                            <p class="cart_item_name_t">{{ product.name }}</p>
+                            <p class="cart_item_qv_t">Количество: {{item.quantity}}</p>
+                            <p class="cart_item_price_t">{{ item.total_price }} руб.</p>
+                    {% endwith %}
+                {% endfor %}
 
-
+                <div class="total_price">
+                    <td>К оплате:</td>
+                    <td colspan="4"></td>
+                    <td class="num">{{ cart.get_total_price }} руб.</td>
+                </div>
+            </tr>
+        </div>
+</div>
 
 {% endblock %}

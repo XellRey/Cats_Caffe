@@ -20,17 +20,18 @@
 
     {% for p in product_list %}
         <div class="product_list">
-            <div class="product">
-                <img class="product_image"  src="{{p.image.url}}">
-                <p class="product_name">{{p.name}}</p>
-                <p class="product_price">{{p.price}}р.</p>
-                <form action="{% url 'cart:cart_add' p.id %}}" method="post">
+             <div class="product">
+               <form action="{% url 'cart:CartAdd' p.id %}" method="post">
+                   <img class="product_image"  src="{{p.image.url}}">
+                    <p class="product_name">{{p.name}}</p>
+                    <p class="product_price">{{p.price}}р.</p>
+                    {{ cart_product_form }}
                     {% csrf_token %}
-                    {{ CartAddProductForm }}
-                    <input type="submit" value="Добавить">
-                </form>
+                    <input class="btn_add_to_cart" type="submit" value="Add to cart">
+               </form>
             </div>
         </div>
+
     {% endfor %}
 
 

@@ -4,6 +4,10 @@
     padding: 0;
 }
 
+
+::-webkit-scrollbar{
+    width: 0;
+}
 .bg{
     width: 1920px;
     height: 960px;
@@ -25,6 +29,11 @@ a{
         text-decoration: none;
     }
 
+
+.container{
+    max-width: 100%;
+    width: 1920px;
+}
 
   /*Navigation*/
 .logo{
@@ -66,7 +75,7 @@ a{
 
 
 
-    /* Главаня Страница */
+/* Главаня Страница */
 .name{
     font-family: 'Alata', sans-serif;
     font-size: 90px;
@@ -93,8 +102,9 @@ a{
 
 
 
-    /* Контакты */
+/* Контакты */
 .contacts{
+    display: inline-block;
     box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 45px;
     margin-top: 4%;
@@ -106,20 +116,20 @@ a{
 
 
 .map{
+    margin-bottom: 5%;
+    float: left;
     border-radius: 13px;
     width: 1340px;
     height: 500px;
     overflow: hidden;
-    display: inline-block;
     margin-left: 35px;
     margin-top: 25px;
 }
 
 
 .info {
-    position: absolute;
     border-radius: 13px;
-    margin-top: 1.3%;
+    margin-top: 2%;
     margin-left: 2%;
     width: 500px;
     height: 130px;
@@ -133,38 +143,38 @@ a{
 
 
 .adres{
-    position: fixed;
-    margin-top: 1.1%;
-    margin-left: 30%;
+    float: left;
+    margin-left: 40%;
     border-radius: 13px;
     width: 500px;
     height: 130px;
 
 }
         .text_adr{
+            float: left;
             font-family: 'Alata', sans-serif;
             margin-left: 5%;
-            margin-top: 2%;
+
         }
 
 
 .graphic{
     margin-top: 1.3%;
     margin-left: 55%;
-    position: fixed;
     border-radius: 13px;
-    width: 300px;
+    width: 500px;
     height: 130px;
 
 }
     .text_gr{
+
             font-family: 'Alata', sans-serif;
             margin-left: 5%;
             margin-top: 2%;
     }
 
 
-    /* Menu */
+/* Menu */
 .product_list{
     margin-top: 3%;
     margin-left: 5%;
@@ -195,24 +205,59 @@ a{
         }
             .product_price{
                 font-family: 'Alata', sans-serif;
-                text-align: right;
-                margin-right: 15%;
-                margin-top: 25%;
+                text-align: center;
+                margin-top: 5%;
             }
+                .btn_add_to_cart{
+                    font-size: 22px;
+                    font-family: 'Alata', sans-serif;
+                    border-radius: 3px;
+                    margin-left: 31%;
+                    margin-top: 5%;
+                    background-color: #f3ac52;
+                    border: none;
+                    height: 30px;
+                }
 
 
 
-    /* Bag */
+/* Cart */
 
 .bag_cont{
+    float: left;
+    display: inline-block;
+    overflow: auto;
     box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 45px;
+    border-radius: 45px 0 0 45px;
     margin-top: 4%;
     background: #ffffff;
-    width: 1400px;
+    width: 1000px;
     height: 800px;
-    margin-left: 15%;
+    margin-left: 18%;
+    margin-right: 0.4px;
 }
+
+    .bag_cont h1{
+        margin-left: 45px;
+        font-family: 'Alata', sans-serif;
+    }
+
+
+.cart{
+    margin-right: 1%;
+    width: 400px;
+    background-color: white;
+}
+
+
+.cart_price{
+    display: inline-block;
+    margin-top: 4%;
+    border-radius: 0px 45px 45px 4px;
+    height: 803px;
+    width: 400px;
+    background-color: #f4a803;
+ }
     .price{
         font-family: 'Alata', sans-serif;
         font-size: 23px;
@@ -229,11 +274,72 @@ a{
             margin-top: 10%;
             margin-left: 8%;
         }
+            .cart_item{
+                font-family: 'Alata', sans-serif;
+                width: 300px ;
+                height: auto ;
+            }
+            .cart_item_img{
+                margin-left: 17%;
+                height: 205px;
+                width: 205px;
+
+            }
+                .cart_item_price{
+                    float: right;
+                    font-size: 18px;
+                    font-family: 'Alata', sans-serif;
+                    margin-left: 35%;
+                }
+                    .cart_item_price_t{
+                        float: right;
+                        font-size: 18px;
+                        font-family: 'Alata', sans-serif;
+                    }
+
+                    .cart_item_qv_t{
+                        margin-left: 5%;
+                        display: inline-block;
+                        font-size: 18px;
+                        font-family: 'Alata', sans-serif;
+                    }
+                    .cart_item_name{
+                        font-size: 18px;
+                        font-family: 'Alata', sans-serif;
+                        text-align: center;
+
+                    }
+                        .cart_item_name_t{
+                            margin-top: 5%;
+                            margin-left: 5%;
+                            font-size: 18px;
+                            font-family: 'Alata', sans-serif;
+                        }
+
+                        .cart_item_remove{
+                            border-radius: 6px;
+                            width: 70px;
+                            background-color: #f3ac52;
+                            margin-top: 15%;
+                            font-size: 18px;
+                            font-family: 'Alata', sans-serif;
+                            margin-left: 80%;
+                        }
+
+                            .total_price{
+                                margin-left: 5%;
+                                margin-top: 10%;
+                                font-size: 20px;
+                                font-family: 'Alata', sans-serif;
+                            }
+                                .cart_price_line{
+
+                                    color: black;
+                                }
 
 
 /*Login*/
 .reg_btn_login{
-
     font-family: 'Alata', sans-serif;
     margin-left: 70%;
     font-size: 25px;
@@ -241,7 +347,6 @@ a{
 
 }
 .back{
-
     font-family: 'Alata', sans-serif;
     display: inline-block;
     margin-top: 49%;
