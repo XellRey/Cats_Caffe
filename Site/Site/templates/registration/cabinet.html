@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class="container">
 <div class="cabinet_block">
      <div class="nav">
         <a href="{% url 'index' %}"><img src="/static/img/logo.png" class="logo"></a>
@@ -14,14 +15,14 @@
     </div>
 
     <div class="profile_block">
+        <br>
         <h3 class="profile_name"> Welcome, {{request.user.username}}</h3>
-        <p class=" "> Email: {{request.user.email}}</p>
-        <p class=" "> Date of joining: {{request.user.date_joined}}</p>
-        <p class=" "> First name: {{request.user.first_name}}</p>
-        <div class="history">
-
-        </div>
+        <p class="profile_data"> Email: {{request.user.email}}</p>
+        <p class="profile_data "> Date of joining: {{request.user.date_joined}}</p>
+        <p class="profile_data "> First name: {{request.user.first_name}}</p>
+        <img class="profile_img" src="https://i.pinimg.com/550x/d5/3d/1e/d53d1e5c3d9f22ae00d91ef69b2789b0.jpg">
     </div>
+</div>
 </div>
 
 
